@@ -1,68 +1,68 @@
-Team Name - InfiLearners
-
 🚀 Link Ledger – AI-Powered Saved Post Organizer
+👥 Team Name: InfiLearners
 
 Transform unstructured saved posts into a structured, searchable, and deadline-aware opportunity system.
 
-🎯 Problem Statement
+🎯 PROBLEM STATEMENT
 
-In today’s digital ecosystem, students and early professionals rely heavily on social media platforms such as LinkedIn, Instagram, and others to discover opportunities including internships, courses, scholarships, and career resources.
+In today’s digital ecosystem, students and early professionals rely heavily on platforms like LinkedIn, Instagram, and others to discover opportunities such as internships, courses, scholarships, and career resources.
 
-However, these platforms are not designed for structured information management. As a result:
+However, these platforms are not designed for structured information management.
 
-Critical opportunities are buried within large volumes of saved posts
-There is no efficient mechanism to categorize or retrieve saved content
-Important deadlines are frequently overlooked or missed
-Users experience cognitive overload and reduced productivity when revisiting saved items
+⚠️ Key Challenges
+🔴 Critical opportunities are buried within large volumes of saved posts
+🔴 No efficient way to categorize or retrieve saved content
+🔴 Important deadlines are frequently missed
+🔴 Users face cognitive overload while revisiting saved items
 
-This leads to a significant gap between information discovery and actionable utilization, causing users to lose valuable career opportunities despite having already identified them.
+👉 This creates a gap between information discovery and actionable utilization, leading to lost opportunities.
 
-🚨 Problem Impact
-Missed internships and application deadlines
-Inefficient use of time re-scanning saved content
-Loss of high-value opportunities due to poor organization
-Increased dependency on memory instead of systems
-💡 Solution
+🚨 PROBLEM IMPACT
+❌ Missed internships & application deadlines
+❌ Time wasted re-scanning saved content
+❌ Loss of high-value opportunities
+❌ Over-reliance on human memory instead of systems
+💡 SOLUTION
+🔥 Link Ledger
 
-Link Ledger is an AI-powered system that converts unstructured saved content into an organized and actionable dashboard.
+An AI-powered system that transforms chaotic saved content into a structured and actionable dashboard.
 
-It:
-
-Extracts meaningful information from links
-Categorizes opportunities automatically
-Tracks deadlines intelligently
-Provides reminders to ensure timely action
-🧠 Key Features
+⚙️ What it does:
+✅ Extracts meaningful insights from links
+✅ Automatically categorizes opportunities
+✅ Tracks deadlines intelligently
+✅ Sends timely reminders
+🧠 KEY FEATURES
 🔗 Multi-platform link processing (LinkedIn, Instagram, etc.)
 🤖 AI-based content extraction & summarization
 🏷️ Automatic categorization (Internships, Courses, etc.)
-⏰ Deadline detection and tracking
-🔍 Advanced search and filtering
+⏰ Deadline detection & tracking
+🔍 Advanced search & filtering
 📧 Email notification system
-🎨 Clean and responsive dashboard
-🛠️ Tech Stack
-Frontend
+🎨 Clean & responsive dashboard UI
+🛠️ TECH STACK
+🎨 Frontend
 Next.js
 TypeScript
 Tailwind CSS
-Backend
+⚙️ Backend
 Node.js
 Express.js
 Puppeteer (Web Scraping)
 GROQ API (AI Processing)
-Tools & Services
+🔧 Tools & Services
 Nodemailer (Email Notifications)
 Node-cron (Scheduling)
 JSON Storage
-⚙️ Setup Instructions
-1. Clone Repository
+⚙️ SETUP INSTRUCTIONS
+🔹 1. Clone Repository
 git clone https://github.com/VINEELAMALLA/LinkLedger.git
 cd LinkLedger
-2. Install Dependencies
+🔹 2. Install Dependencies
 npm install --workspaces
-3. Configure Environment Variables
+🔹 3. Configure Environment Variables
 
-Create .env file inside backend:
+Create a .env file inside backend:
 
 PORT=3000
 FRONTEND_ORIGIN=http://localhost:3001
@@ -71,21 +71,22 @@ GROQ_API_KEY=your_api_key
 
 SMTP_USER=your_email@gmail.com
 SMTP_PASS=your_app_password
-4. Run the Application
+🔹 4. Run the Application
 npm run dev
 
-Open:
+🌐 Open in browser:
 
 http://localhost:3001
-📖 How It Works
-Paste a saved post link
-AI extracts key details
-System categorizes content
-Deadlines are detected
-Dashboard organizes everything
-Notifications are sent to the user
+📖 HOW IT WORKS
 
-🏗️ Project Architecture
+1️⃣ Paste a saved post link
+2️⃣ AI extracts key information
+3️⃣ System categorizes content
+4️⃣ Deadlines are identified & tracked
+5️⃣ Dashboard organizes everything
+6️⃣ Notifications are sent to user
+
+🏗️ PROJECT ARCHITECTURE
 Frontend (Next.js)
         ↓
 Backend (Node.js + Express)
@@ -95,33 +96,30 @@ AI Processing (GROQ API)
 Storage (JSON)
         ↓
 Notification System
-
-🎥 Demo Video (Mandatory)
+🎥 DEMO VIDEO (MANDATORY)
 
 👉 Add your demo video link here (YouTube / Drive)
 
-💻 GitHub Repository (Mandatory)
+💻 GITHUB REPOSITORY (MANDATORY)
 
 👉 https://github.com/VINEELAMALLA/LinkLedger
 
-📊 Project Details
-Project Name: Link Ledger
-Domain: AI + Productivity
-Category: Smart Information Management
-Core Innovation: Multi-agent AI pipeline for organizing saved content
+📊 PROJECT DETAILS
+🧾 Project Name: Link Ledger
+🧠 Domain: AI + Productivity
+📂 Category: Smart Information Management
+🚀 Core Innovation: Multi-agent AI pipeline for organizing saved content
+👥 POINT OF CONTACT
+👤 Name: Vineela Malla
+📧 Email: vineelamalla1407@gmail.com
+📱 Phone: 7396386936
+💻 GitHub: https://github.com/VINEELAMALLA
+🚀 FUTURE ENHANCEMENTS
+🌐 Browser extension for one-click saving
+📱 Mobile application
+🤖 AI-based recommendation system
+🔄 Cross-platform synchronization
+👥 Real-time collaboration
+🏁 CONCLUSION
 
-👥 Point of Contact
-Name: Vineela Malla
-Email: vineelamalla1407@gmail.com
-phone:7396386936
-GitHub: https://github.com/VINEELAMALLA
-
-🚀 Future Enhancements
-Browser extension for one-click saving
-Mobile application
-AI-based recommendation system
-Cross-platform sync
-Real-time collaboration features
-🏁 Conclusion
-
-Link Ledger bridges the gap between saving information and acting on it by transforming scattered digital content into a structured opportunity management system.
+Link Ledger bridges the gap between saving information and taking action by converting scattered digital content into a structured opportunity management system.
