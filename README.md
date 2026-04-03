@@ -1,3 +1,5 @@
+Team Name - InfiLearners
+
 🚀 Link Ledger – AI-Powered Saved Post Organizer
 
 Transform unstructured saved posts into a structured, searchable, and deadline-aware opportunity system.
