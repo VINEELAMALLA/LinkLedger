@@ -1,0 +1,23 @@
+{
+  "name": "scrapper-agent",
+  "version": "1.0.0",
+  "description": "an agent which collects data from links",
+  "license": "ISC",
+  "author": "rushithadatta",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^17.3.1",
+    "express": "^5.2.1",
+    "node-cron": "^4.2.1",
+    "nodemailer": "^7.0.5",
+    "puppeteer": "^21.11.0",
+    "puppeteer-extra": "^3.3.6",
+    "puppeteer-extra-plugin-stealth": "^2.11.2"
+  },
+  "keywords": []
+}

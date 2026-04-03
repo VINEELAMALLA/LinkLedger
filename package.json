@@ -1,0 +1,23 @@
+{
+  "name": "jhtuh-workspace",
+  "private": true,
+  "workspaces": [
+    "frontend-app",
+    "Scrapper-Agent"
+  ],
+  "scripts": {
+    "dev": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\"",
+    "dev:all": "npm run dev",
+    "clean:frontend": "node -e \"const fs=require('fs');fs.rmSync('frontend-app/.next',{recursive:true,force:true});console.log('Cleaned frontend-app/.next');\"",
+    "dev:fresh": "npm run clean:frontend && npm run dev:all",
+    "install:all": "npm install --workspaces",
+    "dev:frontend": "npm --workspace frontend-app run dev",
+    "build:frontend": "npm --workspace frontend-app run build",
+    "start:frontend": "npm --workspace frontend-app run start",
+    "dev:backend": "npm --workspace Scrapper-Agent run dev",
+    "start:backend": "npm --workspace Scrapper-Agent run start"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}

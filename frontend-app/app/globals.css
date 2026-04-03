@@ -1,0 +1,102 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+:root {
+  --background: #f3f6fb;
+  --foreground: #1f2937;
+  --card: rgba(255, 255, 255, 0.9);
+  --card-foreground: #111827;
+  --popover: rgba(255, 255, 255, 0.96);
+  --popover-foreground: #111827;
+  --primary: #0a66c2;
+  --primary-foreground: #ffffff;
+  --secondary: rgba(236, 242, 249, 0.95);
+  --secondary-foreground: #1d4f91;
+  --muted: rgba(248, 250, 252, 0.92);
+  --muted-foreground: #6b7280;
+  --accent: rgba(225, 48, 108, 0.12);
+  --accent-foreground: #111827;
+  --destructive: #ef4444;
+  --border: rgba(203, 213, 225, 0.9);
+  --input: rgba(255, 255, 255, 0.96);
+  --ring: rgba(10, 102, 194, 0.24);
+  --radius: 1rem;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 6px);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-body), Georgia, serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+button,
+label {
+  font-family: var(--font-headline), sans-serif;
+}
+
+.paper-backdrop {
+  background:
+    radial-gradient(1000px 560px at 10% -10%, rgba(10, 102, 194, 0.12), transparent 60%),
+    radial-gradient(900px 520px at 110% 0%, rgba(66, 103, 178, 0.12), transparent 56%),
+    radial-gradient(850px 560px at 50% 100%, rgba(225, 48, 108, 0.09), transparent 54%),
+    linear-gradient(165deg, #f7f9fc 0%, #f3f6fb 48%, #eef3f8 100%);
+}
+
+.fade-rise {
+  animation: fadeRise 0.45s ease-out both;
+}
+
+@keyframes fadeRise {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
