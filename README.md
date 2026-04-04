@@ -82,8 +82,8 @@ An AI-powered system that transforms chaotic saved content into a structured and
 ## ⚙️ Setup Instructions
 
 ### 1. Clone Repository
-git clone https://github.com/VINEELAMALLA/LinkLedger.git
-cd LinkLedger
+- git clone https://github.com/VINEELAMALLA/LinkLedger.git
+- cd LinkLedger
 
 ### 2. Install Dependencies
 npm install --workspaces
@@ -103,14 +103,17 @@ npm run dev
 🌐 Open in browser:
 http://localhost:3001
 
-### 📖 How It Works
-Paste a saved post link
-AI extracts key information
-System categorizes content
-Deadlines are identified & tracked
-Dashboard organizes everything
-Notifications are sent to the user
+---
 
+### 📖 How It Works
+- Paste a saved post link
+- AI extracts key information
+- System categorizes content
+- Deadlines are identified & tracked
+- Dashboard organizes everything
+- Notifications are sent to the user
+
+---
 ### 🏗️ Project Architecture
 Frontend (Next.js)
    ↓
@@ -122,33 +125,38 @@ Storage (JSON)
    ↓
 Notification System
 
+---
 ### 🎥 Demo Video
 
 demo video link: https://drive.google.com/file/d/1oBb9H5M-tF8VTCjXBLhQyhXi7TzxRSIs/view?usp=drive_link
+---
 
+### PPT
+https://drive.google.com/file/d/1VZvR5yX1afYnpFNFAzK4brjHrlZWcII0/view?usp=drive_link
+---
 ### 💻 GitHub Repository
 
 👉 https://github.com/VINEELAMALLA/LinkLedger
-
+---
 ### 📊 Project Details
 🧾 Project Name: Link Ledger
 🧠 Domain: AI + Productivity
 📂 Category: Smart Information Management
 🚀 Core Innovation: Multi-agent AI pipeline for organizing saved content
-
+---
 ### 👥 Point of Contact
 👤 Name: Vineela Malla
 📧 Email: vineelamalla1407@gmail.com
 📱 Phone: 7396386936
 💻 GitHub: https://github.com/VINEELAMALLA
-
+---
 ### 🚀 Future Enhancements
 🌐 Browser extension for one-click saving
 📱 Mobile application
 🤖 AI-based recommendation system
 🔄 Cross-platform synchronization
 👥 Real-time collaboration
-
+---
 ### 🏁 Conclusion
 
 Link Ledger bridges the gap between saving information and taking action by converting scattered digital content into a structured opportunity management system.
