@@ -85,6 +85,7 @@ export default function HomePage() {
   const [dropdownOpen, setDropdownOpen] = useState(false)
   const [editingDeadline, setEditingDeadline] = useState<string | null>(null)
   const [deadlineInput, setDeadlineInput] = useState("")
+  const [recommendedPosts, setRecommendedPosts] = useState<Item[]>([])
   const dropdownRef = useRef<HTMLDivElement>(null)
 
   const router = useRouter()
@@ -325,6 +326,59 @@ export default function HomePage() {
     setDeadlineInput("")
   }
 
+  // Generate recommendations based on user profile
+  useEffect(() => {
+    if (email && items.length > 0) {
+      const users = JSON.parse(localStorage.getItem('users') || '{}')
+      const userData = users[email.toLowerCase()]
+      const profile = userData?.profile
+
+      if (profile && profile.interests && profile.interests.length > 0) {
+        // Filter items based on user interests
+        const recommended = items.filter(item => {
+          // Check if item category matches user interests
+          const categoryMatch = profile.interests.some((interest: string) =>
+            item.category.toLowerCase().includes(interest.toLowerCase()) ||
+            interest.toLowerCase().includes(item.category.toLowerCase())
+          )
+
+          // Check if keywords match user interests
+          const keywordMatch = profile.interests.some((interest: string) =>
+            item.keywords.some((keyword: string) =>
+              keyword.toLowerCase().includes(interest.toLowerCase()) ||
+              interest.toLowerCase().includes(keyword.toLowerCase())
+            )
+          )
+
+          // Check field/profession relevance
+          const fieldMatch = profile.fieldOfStudy && (
+            item.summary.toLowerCase().includes(profile.fieldOfStudy.toLowerCase()) ||
+            item.keywords.some((keyword: string) =>
+              keyword.toLowerCase().includes(profile.fieldOfStudy.toLowerCase())
+            )
+          )
+
+          const professionMatch = profile.profession && (
+            item.summary.toLowerCase().includes(profile.profession.toLowerCase()) ||
+            item.keywords.some((keyword: string) =>
+              keyword.toLowerCase().includes(profile.profession.toLowerCase())
+            )
+          )
+
+          return categoryMatch || keywordMatch || fieldMatch || professionMatch
+        })
+
+        // Limit to 6 recommendations and randomize order slightly
+        const shuffled = recommended.sort(() => 0.5 - Math.random())
+        setRecommendedPosts(shuffled.slice(0, 6))
+      } else {
+        // If no profile, show some general recommendations
+        const shuffled = items.sort(() => 0.5 - Math.random())
+        setRecommendedPosts(shuffled.slice(0, 4))
+      }
+    }
+  }, [email, items])
+
   return (
     <main className="paper-backdrop min-h-screen text-slate-900 relative">
       <div className="fixed top-4 right-4 z-50">
@@ -342,6 +396,12 @@ export default function HomePage() {
                 <p className="text-sm text-slate-600 truncate">{email}</p>
               </div>
               <div className="p-2">
+                <button
+                  onClick={() => router.push('/profile')}
+                  className="w-full text-left px-3 py-2 text-sm text-slate-700 hover:bg-slate-100 rounded-md transition-colors"
+                >
+                  Profile Settings
+                </button>
                 <button
                   onClick={handleSignOut}
                   className="w-full text-left px-3 py-2 text-sm text-slate-700 hover:bg-slate-100 rounded-md transition-colors"
@@ -690,6 +750,106 @@ export default function HomePage() {
                       </div>
                     ))
                   )}
+                </CardContent>
+              </Card>
+            )}
+
+            {/* Recommended Posts Section */}
+            {selectedCategory === "" && recommendedPosts.length > 0 && (
+              <Card className="fade-rise border-slate-200 bg-white/88 backdrop-blur-xl shadow-lg shadow-slate-200/70">
+                <CardHeader>
+                  <CardTitle className="text-2xl flex items-center gap-2">
+                    <Sparkles className="h-6 w-6 text-purple-600" />
+                    Recommended Posts for You
+                  </CardTitle>
+                  <CardDescription className="text-slate-600">
+                    Personalized suggestions based on your profile and interests
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <div className="grid grid-cols-2 gap-4">
+                    {recommendedPosts.map((item, index) => (
+                      <article
+                        key={`rec-${item.id}`}
+                        className="fade-rise rounded-3xl border border-slate-200 bg-[linear-gradient(180deg,_rgba(255,255,255,0.96),_rgba(247,250,252,0.98))] p-4 shadow-lg shadow-slate-200/60"
+                        style={{ animationDelay: `${index * 80}ms` }}
+                      >
+                        <div className="flex flex-wrap items-start justify-between gap-3">
+                          <div>
+                            <p className="text-xs uppercase tracking-[0.25em] text-[#4267B2]">{item.platform}</p>
+                            <h3 className="mt-2 text-lg font-semibold text-slate-900">
+                              {item.opportunity_title || `${item.organization_name} - ${item.category}`}
+                            </h3>
+                            <p className="mt-1 text-xs uppercase tracking-[0.2em] text-slate-500">
+                              {item.organization_name} - {item.category}
+                            </p>
+                          </div>
+                          <div className="flex items-center gap-2">
+                            <div
+                              className={`rounded-full px-3 py-1 text-xs font-medium ${
+                                item.deadline_status === "upcoming"
+                                  ? "bg-emerald-100 text-emerald-700"
+                                  : item.deadline_status === "overdue"
+                                    ? "bg-red-100 text-red-700"
+                                    : "bg-amber-100 text-amber-700"
+                              }`}
+                            >
+                              {editingDeadline === item.id ? (
+                                <div className="flex items-center gap-2">
+                                  <input
+                                    type="date"
+                                    value={deadlineInput}
+                                    onChange={(e) => setDeadlineInput(e.target.value)}
+                                    className="text-xs bg-transparent border-none outline-none w-24"
+                                    autoFocus
+                                  />
+                                  <button
+                                    onClick={() => handleUpdateDeadline(item.id, deadlineInput)}
+                                    className="text-green-600 hover:text-green-800"
+                                  >
+                                    ✓
+                                  </button>
+                                  <button
+                                    onClick={cancelEditingDeadline}
+                                    className="text-red-600 hover:text-red-800"
+                                  >
+                                    ✕
+                                  </button>
+                                </div>
+                              ) : (
+                                <div className="flex items-center gap-2">
+                                  <span>{item.deadline ? `Deadline: ${item.deadline}` : "No deadline found"}</span>
+                                  <button
+                                    onClick={() => startEditingDeadline(item.id, item.deadline)}
+                                    className="text-slate-500 hover:text-slate-700 opacity-60 hover:opacity-100"
+                                  >
+                                    <Edit className="h-3 w-3" />
+                                  </button>
+                                </div>
+                              )}
+                            </div>
+                          </div>
+                        </div>
+
+                        {item.concept_topic ? (
+                          <p className="mt-3 text-xs font-medium uppercase tracking-[0.2em] text-[#E1306C]">
+                            Topic: {item.concept_topic}
+                          </p>
+                        ) : null}
+
+                        <div className="mt-5 flex flex-wrap items-center gap-4 text-sm">
+                          <a
+                            href={item.source_url}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="text-slate-500 hover:text-[#0A66C2]"
+                          >
+                            View original post
+                          </a>
+                        </div>
+                      </article>
+                    ))}
+                  </div>
                 </CardContent>
               </Card>
             )}
