@@ -147,7 +147,6 @@ http://localhost:3001
 ### 👥 Point of Contact
 - 👤 Name: Vineela Malla
 - 📧 Email: vineelamalla1407@gmail.com
-- 📱 Phone: 7396386936
 - 💻 GitHub: https://github.com/VINEELAMALLA
 ---
 ### 🚀 Future Enhancements
