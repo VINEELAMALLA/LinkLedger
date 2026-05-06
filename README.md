@@ -115,15 +115,15 @@ http://localhost:3001
 
 ---
 ### 🏗️ Project Architecture
-Frontend (Next.js)
-   ↓
-Backend (Node.js + Express)
-   ↓
-AI Processing (GROQ API)
-   ↓
-Storage (JSON)
-   ↓
-Notification System
+- Frontend (Next.js)
+-    ↓
+- Backend (Node.js + Express)
+-    ↓
+- AI Processing (GROQ API)
+-    ↓
+- Storage (JSON)
+-    ↓
+- Notification System
 
 ---
 ### 🎥 Demo Video
