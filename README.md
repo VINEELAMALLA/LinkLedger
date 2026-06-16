@@ -1,11 +1,5 @@
 # 🚀 Link Ledger – AI-Powered Saved Post Organizer
 
-## 👥 Team Name: InfiLearners
-
-> Transform unstructured saved posts into a structured, searchable, and deadline-aware opportunity system.
-
----
-
 ## 🎯 Problem Statement
 
 In today’s digital ecosystem, students and early professionals rely heavily on platforms like LinkedIn, Instagram, and others to discover opportunities such as internships, courses, scholarships, and career resources.
